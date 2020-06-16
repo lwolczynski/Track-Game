@@ -1,0 +1,110 @@
+$line-color: #ffffff;
+$track-color: #a84909;
+$shadow-color: #000000;
+$point-color: #000000;
+$track-width: 560px;
+$track-height: 360px;
+$diff-size: 20px;
+$point-size: 20px;
+$shadow-size: 5px;
+
+body {
+    font-family: Raleway;
+    font-size: large;
+}  
+
+.main {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.big_oval {
+    width: $track-width;
+    height: $track-height;
+    background: $track-color;
+    border-radius: $track-height/2;
+    box-shadow: 0px 0px 0px $shadow-size $shadow-color;
+    position: relative;
+}
+
+.oval1 {
+    width: $track-width - 2*$diff-size;
+    height: $track-height - 2*$diff-size;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: $track-color;
+    border-radius: $track-height/2 - $diff-size;
+    z-index: 10;
+    box-shadow: inset 0px 0px 0px 1px $line-color;
+}
+
+.oval2 {
+    width: $track-width - 4*$diff-size;
+    height: $track-height - 4*$diff-size;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: $track-color;
+    border-radius: $track-height/2 - 2*$diff-size;
+    z-index: 20;
+    box-shadow: inset 0px 0px 0px 1px $line-color;
+}
+
+.oval3 {
+    width: $track-width - 6*$diff-size;
+    height: $track-height - 6*$diff-size;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: $track-color;
+    border-radius: $track-height/2 - 3*$diff-size;
+    z-index: 30;
+    box-shadow: inset 0px 0px 0px 1px $line-color;
+}
+
+.inner_oval {
+    width: $track-width - 8*$diff-size;
+    height: $track-height - 8*$diff-size;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: $line-color;
+    border-radius: $track-height/2 - 4*$diff-size;
+    z-index: 40;
+    box-shadow: inset 0px 0px 0px $shadow-size $shadow-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.start_line {
+    width: 10px;
+    height: 4*$diff-size;
+    position: absolute;
+    top: $track-height - 2*$diff-size;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $line-color;
+    z-index: 50;
+}
+
+.point {
+    position: absolute;
+    width: $point-size;
+    height: $point-size;
+    top: $track-height - 2*$diff-size;
+    left: $track-width/2 - 8*$diff-size;
+    transform: translate(-50%, -50%);
+    background: $point-color;
+    border-radius: $point-size/2;
+    z-index: 100;
+}
